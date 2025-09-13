@@ -7,10 +7,9 @@ def text_to_speech(text, filename=None):
     Returns a temporary .wav file path that can be used in Streamlit's st.audio().
     """
     engine = pyttsx3.init()
-    engine.setProperty("rate", 140)  # Speed of speech
-    engine.setProperty("volume", 1.0)  # Volume (0.0 to 1.0)
+    engine.setProperty("rate", 140)
+    engine.setProperty("volume", 1.0)  
 
-    # Use given filename or create a temporary file
     if filename is None:
         tmp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".wav")
         filename = tmp_file.name
